@@ -1,0 +1,7 @@
+C:\Users\pengqian\documents\visual studio 2017\Projects\DotNetCoreAspNet\CoreServiceLibrary\bin\Debug\netcoreapp1.1\CoreServiceLibrary.deps.json
+C:\Users\pengqian\documents\visual studio 2017\Projects\DotNetCoreAspNet\CoreServiceLibrary\bin\Debug\netcoreapp1.1\CoreServiceLibrary.dll
+C:\Users\pengqian\documents\visual studio 2017\Projects\DotNetCoreAspNet\CoreServiceLibrary\obj\Debug\netcoreapp1.1\CoreServiceLibrary.AssemblyInfo.cs
+C:\Users\pengqian\documents\visual studio 2017\Projects\DotNetCoreAspNet\CoreServiceLibrary\obj\Debug\netcoreapp1.1\CoreServiceLibrary.csprojResolveAssemblyReference.cache
+C:\Users\pengqian\documents\visual studio 2017\Projects\DotNetCoreAspNet\CoreServiceLibrary\bin\Debug\netcoreapp1.1\CoreServiceLibrary.pdb
+C:\Users\pengqian\documents\visual studio 2017\Projects\DotNetCoreAspNet\CoreServiceLibrary\obj\Debug\netcoreapp1.1\CoreServiceLibrary.dll
+C:\Users\pengqian\documents\visual studio 2017\Projects\DotNetCoreAspNet\CoreServiceLibrary\obj\Debug\netcoreapp1.1\CoreServiceLibrary.pdb
