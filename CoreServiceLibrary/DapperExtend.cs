@@ -44,6 +44,7 @@ namespace CoreServiceLibrary
             var generator = new SqlGenerator();
             var entity = (IMapping)Activator.CreateInstance(typeof(T));
             sql = generator.Select(entity, filter, sort);
+            Debug.WriteLine(sql);
             using (var reader = connection.ExecuteReader(sql))
             {
                 return DataRead<T>(entity.Properties, reader).FirstOrDefault();
@@ -84,6 +85,7 @@ namespace CoreServiceLibrary
             var generator = new SqlGenerator();
             var entity = (IMapping)Activator.CreateInstance(typeof(T));
             sql = generator.Select(entity, filter, sort);
+            Debug.WriteLine(sql);
             using (var reader = connection.ExecuteReader(sql))
             {
                 var source = DataRead<T>(entity.Properties, reader);
@@ -114,6 +116,7 @@ namespace CoreServiceLibrary
             var generator = new SqlGenerator();
             var entity = (IMapping)Activator.CreateInstance(typeof(T));
             sql = generator.SelectPage(entity, startIndex, endIndex, filter, sort);
+            Debug.WriteLine(sql);
             using (var reader = connection.ExecuteReader(sql))
             {
                 var source = DataRead<T>(entity.Properties, reader).ToList();
@@ -150,6 +153,7 @@ namespace CoreServiceLibrary
             var predicate = analyzer.DealExpress(filter);
             var sql = $"SELECT COUNT(*) FROM {entity.TableName} AS {nickName}";
             sql += string.IsNullOrEmpty(predicate) ? "" : $" WHERE {predicate}";
+            Debug.WriteLine(sql);
             return connection.QueryFirst<int>(sql);
         }
 
@@ -170,6 +174,7 @@ namespace CoreServiceLibrary
             {
                 var key = connection.ExecuteScalar(sql,p);
                 keyIdentity.PropertyInfo.SetValue(entity, key);
+                return;
             }
             connection.Execute(sql,p);
         }
@@ -189,6 +194,7 @@ namespace CoreServiceLibrary
             var p = new DynamicParameters();
             entity.Properties.Where(x => !x.Ignored || x.Identity || x.IsReadOnly)
                 .Where(x => !x.Identity && !x.IsPrimaryKey).ToList().ForEach(x => p.Add("@" + x.Name, x.PropertyInfo.GetValue(entity)));
+            Debug.WriteLine(sql);
             return connection.Execute(sql, p);
         }
 
@@ -215,6 +221,20 @@ namespace CoreServiceLibrary
         }
 
         /// <summary>
+        /// 从实体批量更新（每个实体必须指定主键<see cref="PropertyMap.IsPrimaryKey"/>）
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="connection"></param>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static int Update<T>(this IDbConnection connection, IList<T> source) where T : class, IMapping, new()
+        {
+            return source.Sum(connection.Update);
+        }
+
+
+
+        /// <summary>
         /// 删除数据
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -228,7 +248,14 @@ namespace CoreServiceLibrary
             return connection.Execute(sql);
         }
 
-        public static int Delete<T>(this IDbConnection connection,IMapping entity) where T : class, IMapping, new()
+        /// <summary>
+        /// 根据实体删除数据(实体必须指定主键<see cref="PropertyMap.IsPrimaryKey"/>)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="connection"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public static int Delete<T>(this IDbConnection connection,T entity) where T : class, IMapping, new()
         {
             var map = entity.Properties.FirstOrDefault(x => x.IsPrimaryKey);
             if (map != null)
@@ -241,6 +268,20 @@ namespace CoreServiceLibrary
             }
             return 0;
         }
+
+        /// <summary>
+        /// 从实体批量删除数据（每个实体必须指定主键<see cref="PropertyMap.IsPrimaryKey"/>）
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="connection"></param>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static int Delete<T>(this IDbConnection connection, IList<T> source) where T : class, IMapping, new()
+        {
+            return source.Sum(connection.Delete);
+        }
+
+
 
         private static IEnumerable<T> DataRead<T>(IList<PropertyMap> maps,IDataReader reader) where T : class, IMapping,new ()
         {

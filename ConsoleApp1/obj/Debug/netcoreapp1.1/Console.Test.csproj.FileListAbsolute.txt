@@ -1,0 +1,11 @@
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\bin\Debug\netcoreapp1.1\Console.Test.deps.json
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\bin\Debug\netcoreapp1.1\Console.Test.runtimeconfig.json
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\bin\Debug\netcoreapp1.1\Console.Test.runtimeconfig.dev.json
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\bin\Debug\netcoreapp1.1\Console.Test.dll
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\obj\Debug\netcoreapp1.1\Console.Test.csprojResolveAssemblyReference.cache
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\obj\Debug\netcoreapp1.1\Console.Test.AssemblyInfo.cs
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\bin\Debug\netcoreapp1.1\Console.Test.pdb
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\bin\Debug\netcoreapp1.1\CoreServiceLibrary.dll
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\bin\Debug\netcoreapp1.1\CoreServiceLibrary.pdb
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\obj\Debug\netcoreapp1.1\Console.Test.dll
+C:\Users\pengqian\Source\Repos\netcorePzMapping\ConsoleApp1\obj\Debug\netcoreapp1.1\Console.Test.pdb

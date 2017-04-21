@@ -7485,10 +7485,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pengqian\\Documents\\Visual Studio 2017\\Projects\\DotNetCoreAspNet\\CoreServiceLibrary\\CoreServiceLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\pengqian\\Source\\Repos\\netcorePzMapping\\CoreServiceLibrary\\CoreServiceLibrary.csproj",
       "projectName": "CoreServiceLibrary",
-      "projectPath": "C:\\Users\\pengqian\\Documents\\Visual Studio 2017\\Projects\\DotNetCoreAspNet\\CoreServiceLibrary\\CoreServiceLibrary.csproj",
-      "outputPath": "C:\\Users\\pengqian\\Documents\\Visual Studio 2017\\Projects\\DotNetCoreAspNet\\CoreServiceLibrary\\obj\\",
+      "projectPath": "C:\\Users\\pengqian\\Source\\Repos\\netcorePzMapping\\CoreServiceLibrary\\CoreServiceLibrary.csproj",
+      "outputPath": "C:\\Users\\pengqian\\Source\\Repos\\netcorePzMapping\\CoreServiceLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
